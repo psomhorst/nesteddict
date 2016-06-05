@@ -24,7 +24,7 @@ class nesteddict(dict):
             for k in d:
                 if isinstance(d[k], collections.Mapping):
                     r = self.get(k, {})
-                    if isinstance(self[k], collections.Mapping):
+                    if isinstance(r, collections.Mapping):
                         r = self.__class__(r)
                         r.update(d[k])
                         self[k] = r
